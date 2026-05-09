@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact AURIXA Concierge">
+    <title>AURIXA | Concierge</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-hero {
+            height: 40vh;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">AURIXA</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Collection</a></li>
+                <li><a href="about.html">Maison</a></li>
+                <li><a href="contact.html" style="color: var(--champagne-gold);">Concierge</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <button class="cart-icon-btn">
+                Cart <span class="cart-count">0</span>
+            </button>
+            <a href="checkout.html" style="font-size: 0.9rem; margin-left: 1rem;">Checkout</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero contact-hero fade-in">
+            <div class="hero-content">
+                <h1>Private Concierge</h1>
+            </div>
+        </section>
+
+        <section class="fade-in">
+            <div class="contact-form">
+                <h2 class="section-title">Inquire</h2>
+                <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                    For personalized styling, exclusive sourcing, or aftercare services, please contact our dedicated team.
+                </p>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-gold" style="width: 100%;">Send Inquiry</button>
+                    <div id="form-status" style="margin-top: 1rem; text-align: center; font-weight: 500;"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Cart Drawer -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Selection</h3>
+            <button class="close-cart-btn">&times;</button>
+        </div>
+        <div id="cart-items-container" class="cart-items">
+            <!-- Items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-gold" style="width: 100%; text-align: center;">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <!-- AI Concierge FAB & Window -->
+    <div id="chat-fab" class="chat-fab">✦</div>
+    <div id="chat-window" class="chat-window">
+        <div class="chat-header">
+            <div>AI Concierge</div>
+            <button id="chat-close" class="chat-close">&times;</button>
+        </div>
+        <div id="chat-messages" class="chat-messages">
+            <div class="message bot">Welcome to AURIXA. How may I assist you with your wardrobe selections today?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Ask about materials, shipping...">
+            <button id="chat-send">Send</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">AURIXA</div>
+        <p>&copy; 2026 AURIXA. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

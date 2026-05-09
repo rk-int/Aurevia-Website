@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Checkout - AURIXA">
+    <title>AURIXA | Checkout</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .checkout-container {
+            max-width: 800px;
+            margin: 8rem auto 4rem;
+            padding: 2rem;
+            background-color: var(--pure-white);
+            border: 1px solid var(--light-gray);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .checkout-header {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .checkout-summary {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">AURIXA</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Collection</a></li>
+                <li><a href="about.html">Maison</a></li>
+                <li><a href="contact.html">Concierge</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <button class="cart-icon-btn">
+                Cart <span class="cart-count">0</span>
+            </button>
+            <a href="checkout.html" style="color: var(--champagne-gold); font-size: 0.9rem; margin-left: 1rem;">Checkout</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="checkout-container fade-in">
+            <h1 class="checkout-header">Order Summary</h1>
+            
+            <div class="checkout-summary" id="checkout-items">
+                <!-- Checkout items populated via JS -->
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; font-size: 1.5rem; font-family: var(--font-heading); margin-bottom: 2rem; border-top: 2px solid var(--obsidian); padding-top: 1rem;">
+                <span>Total</span>
+                <span id="checkout-total">$0.00</span>
+            </div>
+            
+            <button id="pay-btn" class="btn btn-gold" style="width: 100%; font-size: 1rem;" onclick="processPayment()">Complete Purchase</button>
+            <div id="payment-status" style="margin-top: 1.5rem; text-align: center; font-weight: 500;"></div>
+        </div>
+    </main>
+
+    <!-- Global Cart Drawer -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Selection</h3>
+            <button class="close-cart-btn">&times;</button>
+        </div>
+        <div id="cart-items-container" class="cart-items">
+            <!-- Items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-gold" style="width: 100%; text-align: center;">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <!-- AI Concierge FAB & Window -->
+    <div id="chat-fab" class="chat-fab">✦</div>
+    <div id="chat-window" class="chat-window">
+        <div class="chat-header">
+            <div>AI Concierge</div>
+            <button id="chat-close" class="chat-close">&times;</button>
+        </div>
+        <div id="chat-messages" class="chat-messages">
+            <div class="message bot">Welcome to AURIXA. How may I assist you with your wardrobe selections today?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Ask about materials, shipping...">
+            <button id="chat-send">Send</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">AURIXA</div>
+        <p>&copy; 2026 AURIXA. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
